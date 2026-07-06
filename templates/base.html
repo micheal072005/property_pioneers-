@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static tailwind_tags %}
+    {% load humanize %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Property Pioneers{% endblock %}</title>
+
+    {% tailwind_css %}
+    
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css">
+    
+    <!-- AOS Animation CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Playfair+Display:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="{% static 'css/dist/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/base.css' %}">
+
+
+
+    <div class="favicon bg-white p-2 rounded-full shadow-lg">
+        <link rel="icon" href="{% static 'img/favicon.png' %}" type="image/png">
+    </div>
+
+
+        <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Deep Navy Blue - Professional, trustworthy, stable
+                        primary: {
+                            50:  '#F0F4F8',
+                            100: '#D9E2EC',
+                            200: '#BCCCDC',
+                            300: '#9FB3C8',
+                            400: '#829AB1',
+                            500: '#1E3A5F',   // Main brand navy
+                            600: '#152C47',
+                            700: '#0F2137',
+                            800: '#0A1628',
+                            900: '#050C18',
+                        },
+                        // Elegant Gold - Luxury, premium, success
+                        accent: {
+                            50:  '#FFFBF0',
+                            100: '#FFF4D6',
+                            200: '#FFE8AD',
+                            300: '#FFDC84',
+                            400: '#FFD05B',
+                            500: '#C5A572',   // Sophisticated muted gold
+                            600: '#A68A5E',
+                            700: '#876F4A',
+                            800: '#685436',
+                            900: '#493922',
+                        },
+                        // Neutral Grays - Clean, professional, modern
+                        neutral: {
+                            50:  '#F8F9FA',
+                            100: '#F1F3F5',
+                            200: '#E9ECEF',
+                            300: '#DEE2E6',
+                            400: '#ADB5BD',
+                            500: '#6C757D',
+                            600: '#495057',
+                            700: '#343A40',
+                            800: '#212529',
+                            900: '#0D1117',
+                        },
+                    },
+                    fontFamily: {
+                        serif: ['"Playfair Display"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                },
+            },
+        };
+    </script>
+
+
+    <style>
+        /* Smooth scroll behavior */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Custom animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-20px); }
+        }
+
+        .float-animation {
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Navbar scroll effect */
+        .navbar-scrolled {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            backdrop-filter: blur(10px);
+        }
+
+        /* Custom gradient overlay */
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(47, 111, 255, 0.9) 0%, rgba(227, 163, 0, 0.8) 100%);
+        }
+    </style>
+</head>
+
+<body class="bg-neutral-50 text-neutral-800 font-sans">
+
+    <!-- NAVBAR -->
+    <header id="navbar" class="navbar fixed top-0 left-0 right-0 z-[100]  shadow-md transition-all duration-300 bg-transparent bg-white/1 backdrop-blur-md">
+        <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 ">
+            
+            <!-- Logo -->
+            <div class="flex items-center" data-aos="fade-right">
+                <a href="{% url 'home' %}" class="flex items-center space-x-3 group">
+                    <img src="{% static 'img/ppl.png' %}" 
+                         alt="Property Pioneers Logo"
+                         class="w-20 transition-transform duration-300 group-hover:scale-105">
+                </a>
+            </div>
+
+            <!-- Desktop Links -->
+            <ul class="hidden lg:flex items-center space-x-10 text-sm font-medium text-neutral-700" data-aos="fade-down">
+                <li>
+                    <a href="{% url 'home' %}" class="hover:text-accent-600 transition-colors duration-300 relative group py-2 font-semibold">
+                        Home
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}" class="hover:text-accent-600 transition-colors duration-300 relative group py-2 font-semibold">
+                        About
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'services' %}" class="hover:text-accent-600 transition-colors duration-300 relative group py-2 font-semibold">
+                        Services
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}" class="hover:text-accent-600 transition-colors duration-300 relative group py-2 font-semibold">
+                        Contact
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'property_list' %}" class="hover:text-accent-600 transition-colors duration-300 relative group py-2 font-semibold">
+                        Properties
+                        <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-accent-500 group-hover:w-full transition-all duration-300"></span>
+                    </a>
+                </li>
+
+
+            </ul>
+
+            <!-- message - Modern Design -->
+            
+            <div class="hidden lg:flex items-center space-x-4" data-aos="fade-left">
+            {% if user.is_authenticated and user.is_staff %}
+                <a href="{% url 'messages_dashboard' %}" class="group relative inline-flex items-center justify-center px-6 py-2.5 overflow-hidden font-semibold text-white transition-all duration-300 bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg hover:from-primary-700 hover:to-primary-800 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    <span class="relative flex items-center">
+                        <i class="fas fa-envelope mr-2 text-accent-300 group-hover:scale-110 transition-transform duration-300"></i>
+                        Messages
+                    </span>
+                </a>
+            {% else %}
+
+                <a href="{% url 'contact' %}" class="group relative inline-flex items-center justify-center px-6 py-2.5 overflow-hidden font-semibold text-white transition-all duration-300 bg-gradient-to-r from-primary-600 to-primary-700 rounded-lg hover:from-primary-700 hover:to-primary-800 shadow-lg hover:shadow-xl transform hover:-translate-y-0.5">
+                    <span class="relative flex items-center">
+                        <i class="fas fa-rocket mr-2 text-accent-300 group-hover:rotate-12 transition-transform duration-300"></i>
+                        Get Started
+                    </span>
+                </a>
+
+            {% endif %}
+            </div>
+           
+
+            <!-- Mobile menu icon -->
+            <button id="mobileMenuBtn" class="lg:hidden text-neutral-700 focus:outline-none transition-transform hover:scale-110">
+                <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+            </button>
+        </nav>
+
+        <!-- Mobile menu -->
+        <div id="mobileMenu" class="lg:hidden border-t  border-neutral-200 bg-wh shadow-lg bg-transparent bg-white/1 backdrop-blur-md" style="max-height: 0; opacity: 0; visibility: hidden; transition: all 0.3s ease;">
+            <ul class="flex flex-col px-6 py-4 space-y-1 text-sm font-medium">
+                <li>
+                    <a href="{% url 'home' %}" class="group block hover:text-white transition-all py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-accent-500 hover:to-accent-600 hover:shadow-md">
+                        <i class="fas fa-home text-accent-500 group-hover:text-white mr-3 w-5 transition-colors"></i>Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'about' %}" class="group block hover:text-white transition-all py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-accent-500 hover:to-accent-600 hover:shadow-md">
+                        <i class="fas fa-info-circle text-accent-500 group-hover:text-white mr-3 w-5 transition-colors"></i>About
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'services' %}" class="group block hover:text-white transition-all py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-accent-500 hover:to-accent-600 hover:shadow-md">
+                        <i class="fas fa-briefcase text-accent-500 group-hover:text-white mr-3 w-5 transition-colors"></i>Services
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'contact' %}" class="group block hover:text-white transition-all py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-accent-500 hover:to-accent-600 hover:shadow-md">
+                        <i class="fas fa-envelope text-accent-500 group-hover:text-white mr-3 w-5 transition-colors"></i>Contact
+                    </a>
+                </li>
+                <li>
+                    <a href="{% url 'property_list' %}" class="group block hover:text-white transition-all py-3 px-4 rounded-lg hover:bg-gradient-to-r hover:from-accent-500 hover:to-accent-600 hover:shadow-md">
+                        <i class="fas fa-envelope text-accent-500 group-hover:text-white mr-3 w-5 transition-colors"></i>Properties
+                    </a>
+                </li>
+                
+                <!-- messages -->
+                {% if user.is_authenticated and user.is_staff %}
+                <li class="pt-3">
+                    <a href="{% url 'messages_dashboard' %}" class="block text-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-3 px-6 rounded-lg transition-all shadow-md">
+                        <i class="fas fa-envelope mr-2 text-accent-300 group-hover:scale-110 transition-transform duration-300"></i>Messages
+                    </a>
+                </li>
+                {% else %}
+                <li class="pt-3">
+                    <a href="{% url 'contact' %}" class="block text-center bg-gradient-to-r from-primary-600 to-primary-700 hover:from-primary-700 hover:to-primary-800 text-white font-semibold py-3 px-6 rounded-lg transition-all shadow-md">
+                        <i class="fas fa-rocket mr-2"></i>Get Started
+                    </a>
+                {% endif %}
+            </ul>
+        </div>
+    </header>
+
+
+
+    <!-- Messages -->
+    <div class="fixed z-[100] right-4 left-4 top-20 flex flex-col items-center space-y-2">
+        {% if messages %}
+        {% for message in messages %}
+        <div
+            class="flash-message relative px-6 py-3 rounded-lg shadow-lg text-white font-medium text-sm fade-in-down max-w-md w-full
+                    {% if message.tags == 'success' %} bg-primary-600
+                    {% elif message.tags == 'error' %} bg-red-500
+                    {% elif message.tags == 'warning' %} bg-accent-500
+                    {% else %} bg-primary-500 {% endif %}"
+        >
+            <div class="flex items-start space-x-3">
+                <i
+                    class="
+                            {% if message.tags == 'success' %} fas fa-check-circle
+                            {% elif message.tags == 'error' %} fas fa-exclamation-triangle
+                            {% elif message.tags == 'warning' %} fas fa-exclamation-circle
+                            {% else %} fas fa-info-circle {% endif %}
+                            text-lg mt-0.5
+                        "
+                ></i>
+                <p class="flex-1">{{ message }}</p>
+            </div>
+            
+            <button
+                type="button"
+                class="absolute top-3 right-2 text-white hover:text-neutral-200 focus:outline-none close-btn transition-colors duration-200"
+            >
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <main class="">
+        {% block content %}
+        {% endblock %}
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer hidde bg-neutral-900 px-8 text-neutral-300 py-12">
+        <div class="max-w-7xl  mx-auto ">
+            <div class="flex flex-col justify-between lg:flex-row gap-y-8 mb-8">
+                
+                <!-- Company Info -->
+                <div class="col-span-1 md:col-span-2" data-aos="fade-up">
+                    <img src="{% static 'img/ppl.png' %}" alt="Property Pioneers Logo" class="w-20 mb- brightness-0 invert">
+                    <p class="text-neutral-400 mb-4 text-xs leading-relaxed">
+                        Your trusted partner in finding the perfect property. <br> We provide transparent, professional real estate <br> services tailored to your needs.
+                    </p>
+                </div>
+
+                <!-- Quick Links -->
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <h3 class="text-white font-semibold text-lg mb-4">Quick Links</h3>
+                    <ul class="space-y-2 text-xs font-semibol text-neutral-400 ">
+                        <li><a href="{% url 'home' %}" class="hover:text-accent-400 transition-colors flex items-center gap-2">
+                            <i class="fas fa-chevron-right text-accent-500 text-xs"></i>Home
+                        </a></li>
+                        <li><a href="{% url 'about' %}" class="hover:text-accent-400 transition-colors flex items-center gap-2">
+                            <i class="fas fa-chevron-right text-accent-500 text-xs"></i>About Us
+                        </a></li>
+                        <li><a href="{% url 'services' %}" class=" hidden hover:text-accent-400 transition-colors fle items-center gap-2">
+                            <i class="fas fa-chevron-right text-accent-500 text-xs"></i>Services
+                        </a></li>
+                        <li><a href="{% url 'property_list' %}" class="hover:text-accent-400 transition-colors flex items-center gap-2">
+                            <i class="fas fa-chevron-right text-accent-500 text-xs"></i>Properties
+                        </a></li>
+                        <li><a href="{% url 'contact' %}" class="hover:text-accent-400 transition-colors flex items-center gap-2">
+                            <i class="fas fa-chevron-right text-accent-500 text-xs"></i>Contact
+                        </a></li>
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <h3 class="text-white font-semibold text-lg mb-4">Contact Us</h3>
+                    <ul class="space-y-3 text-xs text-neutral-400">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-accent-500 mt-1"></i>
+                            <span>2nd Floor, Mega Glass Complex, <br> 98 East West Road, Port Harcourt</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone-alt text-accent-500"></i>
+                            <a href="tel:+2349046403479" class="hover:text-accent-400 transition-colors">+234 904 640 3479</a>
+                            
+                                <i class="fab fa-whatsapp  text-accent-500"></i>
+                                <a href="https://wa.me/2349072882937" target="_blank"  class="hover:text-accent-400  transition-colors">+234 907 288 2937</a>                            
+
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-accent-500"></i>
+                            <a href="mailto:contact@propertypioneersltd.com" target="_blank" class="hover:text-accent-400 transition-colors">contact@propertypioneersltd.com</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Social Media & Copyright -->
+            <div class="border-t border-neutral-800 pt-6">
+                <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                    <p class="text-sm text-neutral-500">
+                        &copy; {{ now|default:"2025" }} Property Pioneers. All Rights Reserved.
+                    </p>
+                    <div class="flex gap-4">
+                        <a href="#" class="text-neutral-400 hover:text-accent-400 transition-colors">
+                            <i class="fab fa-facebook-f text-lg"></i>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-accent-400 transition-colors">
+                            <i class="fab fa-twitter text-lg"></i>
+                        </a>
+                        <a href="#" class="text-neutral-400 hover:text-accent-400 transition-colors">
+                            <i class="fab fa-instagram text-lg"></i>
+                        </a>
+                        <a href="https://wa.me/2349072882937"  target="_blank" class="text-neutral-400 hover:text-accent-400 transition-colors">
+                            <i class="fab fa-whatsapp text-lg"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    
+    <!-- Swiper JS -->
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    
+    <!-- AOS Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const btn = document.getElementById('mobileMenuBtn');
+            const menu = document.getElementById('mobileMenu');
+
+            function closeMenu() {
+                menu.style.maxHeight = '0px';
+                menu.style.opacity = '0';
+                menu.style.transform = 'translateY(-20px)';
+                menu.style.visibility = 'hidden';
+
+                // change icon back to hamburger
+                btn.querySelector('svg').innerHTML =
+                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+            }
+
+            function openMenu() {
+                menu.style.maxHeight = '500px';
+                menu.style.opacity = '1';
+                menu.style.transform = 'translateY(0)';
+                menu.style.visibility = 'visible';
+
+                // change icon to X
+                btn.querySelector('svg').innerHTML =
+                    '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+            }
+
+            if (btn && menu) {
+                // Toggle on button click
+                btn.addEventListener('click', function (e) {
+                    e.stopPropagation(); // prevent immediate close
+                    const isOpen = menu.style.maxHeight && menu.style.maxHeight !== '0px';
+
+                    if (isOpen) {
+                        closeMenu();
+                    } else {
+                        openMenu();
+                    }
+                });
+
+                // Close if clicking OUTSIDE
+                document.addEventListener('click', function (e) {
+                    const isClickInsideMenu = menu.contains(e.target);
+                    const isClickOnButton = btn.contains(e.target);
+
+                    if (!isClickInsideMenu && !isClickOnButton) {
+                        closeMenu();
+                    }
+                });
+            }
+        });
+
+        // Navbar scroll effect
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                navbar.classList.add('navbar-scrolled', 'shadow-lg');
+            } else {
+                navbar.classList.remove('navbar-scrolled', 'shadow-lg');
+            }
+        });
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+
+    <!-- Custom JS -->
+    <script src="{% static 'js/base.js' %}"></script>
+
+</body>
+
+</html>

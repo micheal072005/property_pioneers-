@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>New Contact Form Submission</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background:#f8fafc; margin:0; padding:0; }
+        .container { max-width: 600px; margin: 40px auto; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .header { background: #2F6FFF; padding: 30px; text-align: center; color: white; }
+        .header h1 { margin: 0; font-size: 28px; font-weight: bold; }
+        .header p { margin: 10px 0 0; opacity: 0.9; }
+        .body { padding: 40px; color: #333; }
+        .label { font-weight: bold; color: #2F6FFF; font-size: 15px; }
+        .value { background: #f8f9ff; padding: 14px; border-radius: 8px; margin: 10px 0 25px; font-size: 16px; }
+        .highlight { background: #FFF8E6; padding: 20px; border-left: 5px solid #E3A300; margin: 30px 0; font-size: 17px; }
+        .footer { background: #f8f9ff; padding: 25px; text-align: center; color: #666; font-size: 14px; }
+        .btn { display: inline-block; background: #E3A300; color: white; padding: 14px 28px; text-decoration: none; border-radius: 8px; font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>New Property Inquiry</h1>
+            <p>Someone just filled the contact form on PropertyPioneers.ng</p>
+        </div>
+
+        <div class="body">
+            <p><span class="label">Full Name:</span></p>
+            <div class="value">{{ name }}</div>
+
+            <p><span class="label">Email Address:</span></p>
+            <div class="value">{{ email }}</div>
+
+            <p><span class="label">Phone Number:</span></p>
+            <div class="value">{{ phone }}</div>
+
+            <p><span class="label">Subject:</span></p>
+            <div class="value">{{ subject }}</div>
+
+            <p><span class="label">Message:</span></p>
+            <div class="highlight">{{ message }}</div>
+
+            <p><strong>Submitted on:</strong> {{ submitted_at|date:"d M Y, h:i A" }}</p>
+
+            <div style="text-align:center; margin-top:40px;">
+                <a href="https://wa.me/{{ phone|cut:'+' }}?text=Hi%20{{ name|urlencode }}!%20Thank%20you%20for%20contacting%20Property%20Pioneers.%20How%20can%20we%20help%20you%20today?" 
+                   class="btn" target="_blank">
+                   Reply on WhatsApp Now
+                </a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© {{ now|date:"Y" }} Property Pioneers • All rights reserved</p>
+            <p>This email was sent automatically from your website contact form.</p>
+        </div>
+    </div>
+</body>
+</html>

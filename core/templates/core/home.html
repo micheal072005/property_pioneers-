@@ -1,0 +1,807 @@
+{% extends "base.html" %}
+{% load static tailwind_tags %}
+{% load humanize %}
+
+
+{% block title %}Home | Property Pioneers - Your Trusted Real Estate Partner{% endblock %}
+
+{% block content %}
+
+<!-- FULL SCREEN HERO SWIPER -->
+<div id="hero_swiper" class="swiper heroSwiper h-screen text-white relative">
+    <div class="swiper-wrapper cursor-grab ">
+        <!-- Slide 1 -->
+        <div class="swiper-slide relative">
+            <img src="{% static 'img/house1.jpeg' %}"  class="w-full h-full object-cover" alt="Modern Home">
+            <div class="absolute inset-0 bg-gradient-to-br from-primary-900/90 via-primary-800/70 to-accent-900/80"></div>
+            
+            <div class="absolute inset-0 flex items-center justify-center px-6">
+                <div class="max-w-5xl text-center ">
+                    <div class="mb-4  hidde" data-aos="fade-down">
+                        <span class="inline-block bg-accent-500 text-white text-sm font-semibold px-6 py-2 rounded-full">
+                            <i class="fas fa-trophy mr-2"></i>#1 Trusted Real Estate Company
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-serif mb-6 mt-4 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                        Find Your Perfect Property With <span class="text-accent-300">Property Pioneers</span>
+                    </h1>
+                    <p class="text-lg md:text-2xl mb-10 text-neutral-100 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                        Luxury homes, verified lands, premium apartments & commercial spaces across prime locations with 24/7 expert support.
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                        <a href="{% url 'property_list' %}" class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                            <i class="fas fa-search mr-2"></i>Explore Properties
+                        </a>
+                        <a href="{% url 'contact' %}" class="inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 border-2 border-white text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-300">
+                            <i class="far fa-calendar-check mr-2"></i>Schedule Consultation
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="swiper-slide relative">
+            <img src="{% static 'img/e2.jpg' %}" class="w-full h-full object-cover hidden " alt="Luxury Property ">
+            <img src="{% static 'img/house2.jpeg' %}" class="  w-full h-full object-cover" alt="Modern Home">
+            <div class="absolute inset-0 bg-gradient-to-br from-neutral-900/90 via-primary-900/70 to-accent-900/80"></div>
+            
+            <div class="absolute inset-0 flex items-center justify-center px-6">
+                <div class="max-w-5xl text-center">
+                    <div class="mb-4" data-aos="fade-down">
+                        <span class="inline-block bg-accent-500 text-white text-sm font-semibold px-6 py-2 rounded-full">
+                            <i class="fas fa-star mr-2"></i>5+ Years of Excellence
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-serif mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                        Trusted Real Estate Partners Since 2020
+                    </h1>
+                    <p class="text-lg md:text-2xl mb-10 text-neutral-100 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                        Transparent deals • Verified titles • Virtual tours • Investment analysis • Maximum ROI guaranteed
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                        <a href="{% url 'contact' %}" class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                            <i class="fas fa-rocket mr-2"></i>Get Started Today
+                        </a>
+                        <a href="{% url 'about' %}" class="inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 border-2 border-white text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-300">
+                            <i class="fas fa-check-circle mr-2"></i>Why Choose Us
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="swiper-slide relative">
+        <img src="{% static 'img/house3.jpeg' %}" class="w-full h-full object-cover hidden " alt="Luxury Property ">
+            <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=1920&q=80" class="  w-full h-full object-cover" alt="Modern Home">
+            <div class="absolute inset-0 bg-gradient-to-br from-accent-900/90 via-primary-900/70 to-neutral-900/80"></div>
+            
+            <div class="absolute inset-0 flex items-center justify-center px-6">
+                <div class="max-w-5xl text-center">
+                    <div class="mb-4" data-aos="fade-down">
+                        <span class="inline-block bg-white text-primary-700 text-sm font-semibold px-6 py-2 rounded-full">
+                            <i class="fas fa-bullseye mr-2"></i>Investment Made Easy
+                        </span>
+                    </div>
+                    <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold font-serif mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+                        Smart Property Investment Solutions
+                    </h1>
+                    <p class="text-lg md:text-2xl mb-10 text-neutral-100 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                        Expert analysis tools • Property management • Virtual tours • 24/7 dedicated support for your success
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+                        <a href="{% url 'property_list' %}" class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold py-4 px-10 rounded-lg text-lg transition-all duration-300 shadow-xl hover:shadow-2xl transform hover:-translate-y-1">
+                            <i class="fas fa-chart-line mr-2"></i>Start Investing
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Pagination & Navigation -->
+    <div class="swiper-pagination !bottom-2"></div>
+</div>
+
+
+<!-- FEATURED PROPERTIES SECTION -->
+<section class="py-12 md:py-20 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-4 md:px-6 mb-14">
+
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4" data-aos="fade-up">
+                Recent Properties
+            </h2>
+            <p class="text-neutral-600 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Discover our curated collection of exceptional properties tailored to your lifestyle and investment goals.
+            </p>
+        </div>
+
+        <!-- Properties Grid -->
+        <div class=" grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-4 md:gap-40 md:px-20 capitalize">
+            {% for property in latest_properties %}
+            <div class="group" data-aos="fade-up" data-aos-delay="{% cycle '0' '100' '200' '0' '100' '200' %}">
+                <a href="{% url 'property_detail' property.slug %}" class="block">
+                    <div class="bg-white rounded-xl shadow-md overflow-hidden hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-1">
+                        <!-- Image Container -->
+                        <div class="relative overflow-hidden h-48 sm:h-52 md:h-56">
+                            <img src="{{ property.image.url }}" alt="{{ property.name }}" 
+                                 class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700">
+                            
+                            <!-- Hover Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/80 via-neutral-900/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                            
+                            <!-- Hover View Icon -->
+                            <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                                <div class="bg-white/95 backdrop-blur-sm p-3 md:p-4 rounded-full shadow-xl">
+                                    <i class="fas fa-eye text-accent-500 text-xl md:text-2xl"></i>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Content -->
+                        <div class="p-4 md:p-5">
+                            <!-- Property Name -->
+                            <h3 class="text-base md:text-lg font-bold text-neutral-900  group-hover:text-accent-600 transition-colors duration-300 line-clamp-2 min-h-[3rem]">
+                                {{ property.name }}
+                            </h3>
+                            
+                            <!-- Location & Price Row -->
+                            <div class="space-y-2 mb-2">
+
+                                <!-- Price -->
+                                <div class="flex items-center gap-2">
+                                    <span class="text-accent-600 font-semibold text-sm md:text-base">₦ {{ property.price|intcomma }}</span>
+                                </div>
+
+                                <!-- Location -->
+                                <div class="flex items-start gap-1.5 text-neutral-600">
+                                    <i class="fas fa-map-marker-alt text-accent-500 text-xs mt-1 flex-shrink-0"></i>
+                                    <span class="text-xs md:text-sm line-clamp-1">{{ property.location }}</span>
+                                </div>
+
+                            </div>
+                            
+                            <!-- Description -->
+                            <p class="text-neutral-600 text-xs md:text-sm leading-relaxed mb-2 line-clamp-2 min-h-[2.5rem]">
+                                {{ property.details|truncatewords:15 }}
+                            </p>
+
+
+                            <!-- View Details Button -->
+                            <div class="flex items-center justify-between pt-3 border-t border-neutral-200">
+                                <span class="text-accent-600 font-semibold text-xs md:text-sm group-hover:text-accent-700 transition-colors">
+                                    View Details
+                                </span>
+                                <i class="fas fa-arrow-right text-accent-500 text-sm group-hover:translate-x-1 transition-transform duration-300"></i>
+                            </div>
+                        </div>
+
+                    </div>
+                </a>
+            </div>
+            {% empty %}
+            <!-- Empty State -->
+            <div class="col-span-full text-center py-16 md:py-24" data-aos="fade-up">
+                <div class="bg-white rounded-2xl shadow-lg p-12 max-w-md mx-auto">
+                    <div class="w-24 h-24 mx-auto bg-neutral-100 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-home text-5xl text-neutral-400"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-neutral-900 mb-3">No Properties Yet</h3>
+                    <p class="text-neutral-600 mb-6">There are currently no properties listed. Check back soon!</p>
+                    
+                    {% if user.is_staff %}
+                    <a href="{% url 'add_property' %}" class="inline-flex items-center gap-2 bg-gradient-to-r from-accent-500 to-accent-600 hover:from-accent-600 hover:to-accent-700 text-white px-8 py-3 rounded-lg font-semibold shadow-lg transition-all">
+                        <i class="fas fa-plus-circle"></i>
+                        Add Your First Property
+                    </a>
+                    {% endif %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+        <!-- view more button -->
+        <div>
+            <div class="text-center mt-12" data-aos="fade-up">
+                <a href="{% url 'property_list' %}" class="inline-flex items-center gap-2 bg-white hover:bg-neutral-50 border-2 border-accent-500 text-accent-600 font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all">
+                    <i class="fas fa-eye"></i>
+                    View All Properties
+                </a>
+            </div>
+        </div>
+
+        <!-- Load More Button (if needed) -->
+        {% if properties|length > 9 %}
+        <div class="text-center mt-12" data-aos="fade-up">
+            <button class="inline-flex items-center gap-2 bg-white hover:bg-neutral-50 border-2 border-accent-500 text-accent-600 font-semibold py-3 px-8 rounded-lg shadow-md hover:shadow-lg transition-all">
+                <i class="fas fa-sync-alt"></i>
+                Load More Properties
+            </button>
+        </div>
+        {% endif %}
+    </div>
+</section>
+
+
+
+<!-- STATS SECTION -->
+<section class="  py-16  STATS bg-white relative -mt-20 z-10">
+    <div class="  max-w-7xl mx-auto px-6">
+        <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl shadow-2xl p-8 md:p-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-4xl md:text-5xl font-bold font-serif mb-2">500+</div>
+                    <div class="text-neutral-100 text-sm md:text-base">Properties Sold</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-bold font-serif mb-2">1,200+</div>
+                    <div class="text-neutral-100 text-sm md:text-base">Happy Clients</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-bold font-serif mb-2">5+</div>
+                    <div class="text-neutral-100 text-sm md:text-base">Years Experience</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-bold font-serif mb-2">24/7</div>
+                    <div class="text-neutral-100 text-sm md:text-base">Client Support</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- PROPERTY CATEGORIES -->
+<section id="properties" class="py-20 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4" data-aos="fade-up">
+                Explore Our Property Categories
+            </h2>
+            <p class="text-neutral-600 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                From luxury homes to commercial spaces, find the perfect property that matches your needs and budget.
+            </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
+
+            <!-- Category Card: Houses -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="0">
+                <div class="h-64 bg-gradient-to-br from-primary-500 to-primary-700 relative">
+                    <img src="{% static 'img/house1.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" alt="Houses">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-neutral-900/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <div class="text-4xl mb-2"><i class="fas fa-home"></i></div>
+                        <h3 class="text-2xl font-bold font-serif mb-2">Houses</h3>
+                        <p class="text-neutral-200 text-sm">Luxury and modern homes</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Card: Apartments -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                <div class="h-64 bg-gradient-to-br from-accent-500 to-accent-700 relative">
+                    <img src="{% static 'img/house4.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" alt="Apartments">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-neutral-900/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <div class="text-4xl mb-2"><i class="fas fa-building"></i></div>
+                        <h3 class="text-2xl font-bold font-serif mb-2">Apartments</h3>
+                        <p class="text-neutral-200 text-sm">Affordable & premium units</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Card: Lands -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                <div class="h-64 bg-gradient-to-br from-green-500 to-green-700 relative">
+                    <img src="{% static 'img/house5.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" alt="Lands">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-neutral-900/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <div class="text-4xl mb-2"><i class="fas fa-map-marked-alt"></i></div>
+                        <h3 class="text-2xl font-bold font-serif mb-2">Lands</h3>
+                        <p class="text-neutral-200 text-sm">Secure & verified plots</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Card: Rentals -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                <div class="h-64 bg-gradient-to-br from-purple-500 to-purple-700 relative">
+                    <img src="{% static 'img/house6.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" alt="Rentals">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-neutral-900/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <div class="text-4xl mb-2"><i class="fas fa-key"></i></div>
+                        <h3 class="text-2xl font-bold font-serif mb-2">Rentals</h3>
+                        <p class="text-neutral-200 text-sm">Move-in ready properties</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category Card: Commercial -->
+            <div class="group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="400">
+                <div class="h-64 bg-gradient-to-br from-orange-500 to-orange-700 relative">
+                    <img src="{% static 'img/house2.jpeg' %}" class="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500" alt="Commercial">
+                    <div class="absolute inset-0 bg-gradient-to-t from-neutral-900/90 via-neutral-900/40 to-transparent"></div>
+                    <div class="absolute bottom-0 left-0 right-0 p-6 text-white">
+                        <div class="text-4xl mb-2"><i class="fas fa-store"></i></div>
+                        <h3 class="text-2xl font-bold font-serif mb-2">Commercial</h3>
+                        <p class="text-neutral-200 text-sm">Shops, offices & warehouses</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- WHY CHOOSE US -->
+<section id="why-choose-us" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4" data-aos="fade-up">
+                Why Choose <span class="text-primary-600">Property Pioneers</span>
+            </h2>
+            <p class="text-neutral-600 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                We go beyond traditional real estate services to provide you with cutting-edge tools and expert support.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+
+            <!-- Feature 1: Virtual Tours -->
+            <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="0">
+                <div class="bg-primary-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">
+                    <i class="fas fa-vr-cardboard"></i>
+                </div>
+                <h3 class="text-xl font-bold font-serif mb-3 text-neutral-900">Virtual Tours</h3>
+                <p class="text-neutral-600">Experience properties from anywhere with our immersive 360° virtual tour technology.</p>
+            </div>
+
+            <!-- Feature 2: 24/7 Support -->
+            <div class="bg-gradient-to-br from-accent-50 to-accent-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-accent-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h3 class="text-xl font-bold font-serif mb-3 text-neutral-900">24/7 Support</h3>
+                <p class="text-neutral-600">Round-the-clock expert assistance to answer your questions and guide your decisions.</p>
+            </div>
+
+            <!-- Feature 3: Property Management -->
+            <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-primary-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h3 class="text-xl font-bold font-serif mb-3 text-neutral-900">Property Management</h3>
+                <p class="text-neutral-600">Professional management services to maintain and maximize your property's value.</p>
+            </div>
+
+            <!-- Feature 4: Investment Analysis -->
+            <div class="bg-gradient-to-br from-accent-50 to-accent-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="300">
+                <div class="bg-accent-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-white text-2xl">
+                    <i class="fas fa-chart-bar"></i>
+                </div>
+                <h3 class="text-xl font-bold font-serif mb-3 text-neutral-900">Investment Analysis</h3>
+                <p class="text-neutral-600">Advanced tools and expert insights to help you make smart investment decisions.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- ABOUT PREVIEW -->
+<section class="py-20 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+
+            <div class="order-2 md:order-1" data-aos="fade-up">
+                <div class="relative">
+                    <img src="{% static 'img/house7.jpeg' %}" alt="Modern Real Estate Office" class="rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-6 -right-6 bg-accent-500 text-white p-6 rounded-2xl shadow-xl">
+                        <div class="text-3xl font-bold font-serif">5+</div>
+                        <div class="text-sm">Years of Excellence</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-1 md:order-2" data-aos="fade-down">
+                <div class="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4">
+                    <i class="fas fa-info-circle mr-2"></i>About Us
+                </div>
+                <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 text-neutral-900">
+                    Your Trusted Real Estate Partner
+                </h2>
+                <p class="text-neutral-700 text-lg leading-relaxed mb-6">
+                    Property Pioneers is a trusted real estate brand dedicated to helping individuals and businesses secure the best property deals. We provide transparent and professional services tailored to your unique needs.
+                </p>
+                <p class="text-neutral-700 text-lg leading-relaxed mb-8">
+                    With over 5 years of experience and 1,200+ satisfied clients, we've built a reputation for excellence, integrity, and results. Our team of expert advisors is committed to making your property journey smooth and successful.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="{% url 'about' %}" class="inline-block bg-primary-600 hover:bg-primary-700 text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 shadow-md hover:shadow-lg text-center">
+                        <i class="fas fa-arrow-right mr-2"></i>Learn More About Us
+                    </a>
+                    <a href="{% url 'contact' %}" class="inline-block border-2 border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white font-semibold py-3 px-8 rounded-lg transition-all duration-300 text-center">
+                        <i class="fas fa-envelope mr-2"></i>Contact Us
+                    </a>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- SERVICES PREVIEW -->
+<section id="services" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4" data-aos="fade-up">
+                Our Professional Services
+            </h2>
+            <p class="text-neutral-600 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Comprehensive real estate solutions designed to meet all your property needs with excellence and professionalism.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <!-- Service 1 -->
+            <div class="group bg-neutral-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-primary-500 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="0">
+                <div class="bg-gradient-to-br from-primary-500 to-primary-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-serif mb-4 text-neutral-900">Property Sales</h3>
+                <p class="text-neutral-600 leading-relaxed mb-4">
+                    We help clients buy and sell properties with complete transparency, accurate valuations, and expert negotiation support.
+                </p>
+                <ul class="text-neutral-600 space-y-2 text-sm">
+                    <li><i class="fas fa-check text-primary-600 mr-2"></i>Market analysis & pricing</li>
+                    <li><i class="fas fa-check text-primary-600 mr-2"></i>Professional photography</li>
+                    <li><i class="fas fa-check text-primary-600 mr-2"></i>Legal documentation support</li>
+                    <li><i class="fas fa-check text-primary-600 mr-2"></i>Smooth closing process</li>
+                </ul>
+            </div>
+
+            <!-- Service 2 -->
+            <div class="group bg-neutral-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-accent-500 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-gradient-to-br from-accent-500 to-accent-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-home"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-serif mb-4 text-neutral-900">Property Rentals</h3>
+                <p class="text-neutral-600 leading-relaxed mb-4">
+                    Find reliable and affordable rental options for residential homes or commercial spaces with flexible terms.
+                </p>
+                <ul class="text-neutral-600 space-y-2 text-sm">
+                    <li><i class="fas fa-check text-accent-600 mr-2"></i>Tenant screening services</li>
+                    <li><i class="fas fa-check text-accent-600 mr-2"></i>Lease agreement assistance</li>
+                    <li><i class="fas fa-check text-accent-600 mr-2"></i>Property maintenance coordination</li>
+                    <li><i class="fas fa-check text-accent-600 mr-2"></i>Monthly rent collection</li>
+                </ul>
+            </div>
+
+            <!-- Service 3 -->
+            <div class="group bg-neutral-50 rounded-2xl p-8 shadow-lg hover:shadow-2xl transition-all duration-500 border-2 border-transparent hover:border-primary-500 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-gradient-to-br from-primary-500 to-primary-700 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white text-2xl group-hover:scale-110 transition-transform duration-300">
+                    <i class="fas fa-user-tie"></i>
+                </div>
+                <h3 class="text-2xl font-bold font-serif mb-4 text-neutral-900">Real Estate Consultancy</h3>
+                <p class="text-neutral-600 leading-relaxed mb-4">
+                    Professional advice and market insights to help you make informed investment decisions and maximize returns.
+                </p>
+                <ul class="text-neutral-600 space-y-2 text-sm">
+                    <li><i class="fas fa-check text-primary-600 mr-2"></i>Investment portfolio analysis</li>
+                    <li><i class="fas fa-check text-primary-600 mr-2"></i>Market trend forecasting</li>
+                    <li><i class="fas fa-check text-primary-600 mr-2"></i>ROI optimization strategies</li>
+                    <li><i class="fas fa-check text-primary-600 mr-2"></i>Risk assessment & mitigation</li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- TESTIMONIALS – CLOUD EDITION -->
+<section class="py-20 bg-gradient-to-br from-slate-50 via-white to-sky-50 text-neutral-800 overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 relative">
+        <!-- Subtle floating cloud effect (optional but stunning) -->
+        <div class="absolute inset-0 opacity-30 pointer-events-none">
+            <div class="absolute top-10 left-10 w-96 h-96 bg-primary-200/20 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-20 right-20 w-80 h-80 bg-accent-300/20 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="text-center mb-14 relative z-10">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4 text-primary-800" data-aos="fade-up">
+                What Our Clients Say
+            </h2>
+            <p class="text-primary-600 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Trusted by families, investors, and business leaders across Nigeria.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 relative z-10">
+
+            <!-- Testimonial 1 -->
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-primary-100" data-aos="fade-up" data-aos-delay="0">
+                <div class="flex items-center mb-5">
+                    <div class="bg-primary-600 w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mr-4 shadow-lg">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-neutral-900">Chukwuemeka Obi</h4>
+                        <p class="text-primary-600 text-sm font-medium">Business Owner</p>
+                    </div>
+                </div>
+                <div class="text-accent-500 text-xl mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-neutral-700 leading-relaxed italic">
+                    "Property Pioneers made buying my first commercial property stress-free. Their team provided excellent guidance throughout the entire process. Highly recommended!"
+                </p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-primary-100" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center mb-5">
+                    <div class="bg-primary-600 w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mr-4 shadow-lg">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-neutral-900">Amara Johnson</h4>
+                        <p class="text-primary-600 text-sm font-medium">Real Estate Investor</p>
+                    </div>
+                </div>
+                <div class="text-accent-500 text-xl mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-neutral-700 leading-relaxed italic">
+                    "The investment analysis and expert consultation helped me make smart decisions. I've seen a 35% ROI in just 18 months. Truly exceptional service!"
+                </p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-primary-100" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center mb-5">
+                    <div class="bg-primary-600 w-14 h-14 rounded-full flex items-center justify-center text-white text-2xl mr-4 shadow-lg">
+                        <i class="fas fa-home"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg text-neutral-900">The Adeyemi Family</h4>
+                        <p class="text-primary-600 text-sm font-medium">Home Buyers</p>
+                    </div>
+                </div>
+                <div class="text-accent-500 text-xl mb-4">
+                    <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                </div>
+                <p class="text-neutral-700 leading-relaxed italic">
+                    "We found our dream home thanks to Property Pioneers! The virtual tours saved us time, and the 24/7 support was invaluable. Thank you from the bottom of our hearts!"
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- TESTIMONIALS -->
+<section class=" hidden py-20 bg-gradient-to-br from-primary-700 via-primary-600 to-accent-600 text-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4" data-aos="fade-up">
+                What Our Clients Say
+            </h2>
+            <p class="text-primary-100 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Don't just take our word for it - hear from satisfied clients who found their dream properties with us.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <!-- Testimonial 1 -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
+                <div class="flex items-center mb-4">
+                    <div class="bg-accent-500 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Chukwuemeka Obi</h4>
+                        <p class="text-primary-100 text-sm">Business Owner</p>
+                    </div>
+                </div>
+                <div class="text-accent-300 text-xl mb-3">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-neutral-100 leading-relaxed">
+                    "Property Pioneers made buying my first commercial property stress-free. Their team provided excellent guidance throughout the entire process. Highly recommended!"
+                </p>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div class="flex items-center mb-4">
+                    <div class="bg-accent-500 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">Amara Johnson</h4>
+                        <p class="text-primary-100 text-sm">Real Estate Investor</p>
+                    </div>
+                </div>
+                <div class="text-accent-300 text-xl mb-3">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-neutral-100 leading-relaxed">
+                    "The investment analysis tools and expert consultation helped me make smart decisions. I've seen a 35% ROI in just 18 months. Exceptional service!"
+                </p>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="bg-white/10 backdrop-blur-sm rounded-2xl p-8 shadow-xl hover:bg-white/15 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="flex items-center mb-4">
+                    <div class="bg-accent-500 w-12 h-12 rounded-full flex items-center justify-center text-white text-xl mr-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-lg">The Adeyemi Family</h4>
+                        <p class="text-primary-100 text-sm">Home Buyers</p>
+                    </div>
+                </div>
+                <div class="text-accent-300 text-xl mb-3">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                </div>
+                <p class="text-neutral-100 leading-relaxed">
+                    "We found our dream home thanks to Property Pioneers! The virtual tours saved us time, and the 24/7 support was invaluable. Thank you for everything!"
+                </p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- PROCESS SECTION -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-4" data-aos="fade-up">
+                How It Works
+            </h2>
+            <p class="text-neutral-600 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">
+                Our simple 4-step process makes finding and securing your perfect property easy and stress-free.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-4 gap-8">
+
+            <!-- Step 1 -->
+            <div class="text-center" data-aos="fade-up" data-aos-delay="0">
+                <div class="relative mb-6">
+                    <div class="bg-gradient-to-br from-primary-500 to-primary-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto text-white text-3xl font-bold shadow-lg">
+                        1
+                    </div>
+                    <div class="hidden md:block absolute top-10 left-[60%] w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent -z-10"></div>
+                </div>
+                <div class="text-4xl mb-3 text-primary-600">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3 class="text-xl font-bold font-serif mb-3 text-neutral-900">Browse Properties</h3>
+                <p class="text-neutral-600">Explore our curated listings or tell us what you're looking for.</p>
+            </div>
+
+            <!-- Step 2 -->
+            <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                <div class="relative mb-6">
+                    <div class="bg-gradient-to-br from-accent-500 to-accent-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto text-white text-3xl font-bold shadow-lg">
+                        2
+                    </div>
+                    <div class="hidden md:block absolute top-10 left-[60%] w-full h-0.5 bg-gradient-to-r from-accent-300 to-transparent -z-10"></div>
+                </div>
+                <div class="text-4xl mb-3 text-accent-600">
+                    <i class="fas fa-calendar-alt"></i>
+                </div>
+                <h3 class="text-xl font-bold font-serif mb-3 text-neutral-900">Schedule a Tour</h3>
+                <p class="text-neutral-600">Book a physical visit or take a virtual tour from your device.</p>
+            </div>
+
+            <!-- Step 3 -->
+            <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                <div class="relative mb-6">
+                    <div class="bg-gradient-to-br from-primary-500 to-primary-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto text-white text-3xl font-bold shadow-lg">
+                        3
+                    </div>
+                    <div class="hidden md:block absolute top-10 left-[60%] w-full h-0.5 bg-gradient-to-r from-primary-300 to-transparent -z-10"></div>
+                </div>
+                <div class="text-4xl mb-3 text-primary-600">
+                    <i class="fas fa-user-check"></i>
+                </div>
+                <h3 class="text-xl font-bold font-serif mb-3 text-neutral-900">Get Expert Advice</h3>
+                <p class="text-neutral-600">Consult with our experts for analysis, valuation, and guidance.</p>
+            </div>
+
+            <!-- Step 4 -->
+            <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                <div class="relative mb-6">
+                    <div class="bg-gradient-to-br from-accent-500 to-accent-700 w-20 h-20 rounded-full flex items-center justify-center mx-auto text-white text-3xl font-bold shadow-lg">
+                        4
+                    </div>
+                </div>
+                <div class="text-4xl mb-3 text-accent-600">
+                    <i class="fas fa-file-signature"></i>
+                </div>
+                <h3 class="text-xl font-bold font-serif mb-3 text-neutral-900">Close the Deal</h3>
+                <p class="text-neutral-600">We handle all paperwork and ensure a smooth, secure transaction.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA SECTION -->
+<section class="py-24 bg-gradient-to-br CTA from-primary-700/70 via-primary-600/70 to-accent-600/70 text-white relative overflow-hidden">
+    <!-- Animated background pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent-300 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
+        <div class="inline-block bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-semibold mb-6" data-aos="fade-down">
+            <i class="fas fa-rocket mr-2"></i>Let's Get Started
+        </div>
+        <h2 class="text-4xl md:text-6xl font-serif font-bold mb-6" data-aos="fade-up">
+            Ready to Find Your Next Property?
+        </h2>
+        <p class="text-lg md:text-xl mb-10 text-primary-100 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+            Reach out to us today and let our expert team guide you toward the perfect choice. Your dream property is just one conversation away.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+            <a href="{% url 'contact' %}" class="inline-block bg-accent-500 hover:bg-accent-600 text-white text-lg font-bold py-4 px-10 rounded-lg shadow-2xl transition-all duration-300 transform hover:-translate-y-1 hover:shadow-accent-500/50">
+                <i class="fas fa-envelope mr-2"></i>Contact Us Now
+            </a>
+            <a href="tel:+2349072882937" class="inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 border-2 border-white text-white text-lg font-bold py-4 px-10 rounded-lg transition-all duration-300">
+                <i class="fas fa-phone-alt mr-2"></i>Call Us: +234 907 288 2937
+            </a>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-6 text-center" data-aos="fade-up" data-aos-delay="300">
+            <div>
+                <div class="text-3xl mb-2"><i class="fas fa-check-circle"></i></div>
+                <div class="text-sm text-primary-100">Verified Properties</div>
+            </div>
+            <div>
+                <div class="text-3xl mb-2"><i class="fas fa-shield-alt"></i></div>
+                <div class="text-sm text-primary-100">Secure Transactions</div>
+            </div>
+            <div>
+                <div class="text-3xl mb-2"><i class="fas fa-star"></i></div>
+                <div class="text-sm text-primary-100">5-Star Service</div>
+            </div>
+            <div>
+                <div class="text-3xl mb-2"><i class="fas fa-hand-holding-heart"></i></div>
+                <div class="text-sm text-primary-100">100% Transparent</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

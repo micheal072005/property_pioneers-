@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+{% load static tailwind_tags %}
+<head>
+    <meta charset="utf-8">
+    <title>Property Pioneers - Your Inquiry</title>
+    {% tailwind_css %}
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: #f8fafc; color: #1e293b; line-height: 1.7; }
+        .container { max-width: 600px; margin: 40px auto; background: white; border-radius: 16px; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .header { background: linear-gradient(135deg, #1e40af, #3b82f6); padding: 40px 30px; text-align: center; color: white; }
+        .logo { height: 80px; margin-bottom: 20px; }
+        .content { padding: 40px 50px; }
+        .greeting { font-size: 24px; font-weight: bold; color: #1e293b; margin-bottom: 20px; }
+        .message-box { background: #f1f5f9; padding: 25px; border-radius: 12px; border-left: 5px solid #3b82f6; margin: 30px 0; font-size: 16px; }
+        .signature { margin-top: 40px; padding-top: 20px; border-top: 1px solid #e2e8f0; }
+        .footer { background: #0f172a; color: #94a3b8; padding: 30px; text-align: center; font-size: 14px; }
+        .btn { display: inline-block; background: #3b82f6; color: white; padding: 14px 32px; text-decoration: none; border-radius: 50px; font-weight: bold; margin: 20px 0; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://propertypioneersltd.com/static/img/ppl.png" alt="Property Pioneers" class="logo">
+            <h1>We've Responded to Your Inquiry</h1>
+        </div>
+
+        <div class="content">
+            <p class="greeting">Dear {{ name }},</p>
+            
+            <p>Thank you for reaching out to <strong>Property Pioneers</strong>. We're delighted to assist you with your real estate needs.</p>
+
+            <div class="message-box">
+                {{ reply_text|linebreaks }}
+            </div>
+
+            <p>We look forward to helping you find your dream property or close your next big deal.</p>
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/2349072882937" class="btn">Chat on WhatsApp</a>
+            </div>
+
+            <div class="signature">
+                <p><strong>Best regards,</strong><br>
+                <strong>Property Pioneers Team</strong><br>
+                <a href="mailto:contact@propertypioneersltd.com">contact@propertypioneersltd.com</a> | 
+                <a href="tel:+2349046403479">+234 800 000 0000</a><br>
+                <em>Luxury Real Estate • Port Harcourt, Nigeria</em>
+                </p>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>&copy; {{ year }} Property Pioneers. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

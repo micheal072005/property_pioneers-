@@ -1,0 +1,162 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}Messages Dashboard | Property Pioneers{% endblock %}
+
+{% block content %}
+
+<div class="min-h-screen bg-neutral-50 pt-20">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
+        
+        <!-- Header + Logout -->
+        <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center gap-4 sm:gap-6 mb-8 sm:mb-10" data-aos="fade-down">
+            <div>
+                <h1 class="text-2xl sm:text-3xl lg:text-4xl font-bold font-serif text-neutral-900 mb-2">
+                    <i class="fas fa-inbox text-primary-500 mr-2 sm:mr-3"></i>Client Messages
+                </h1>
+                <p class="text-sm sm:text-base text-neutral-600">Welcome back, <strong class="text-primary-600">{{ user.get_full_name|default:user.username }}</strong></p>
+            </div>
+            <a href="{% url 'admin_logout' %}" 
+               class="inline-flex items-center justify-center gap-2 bg-neutral-800 hover:bg-neutral-900 text-white font-semibold py-2.5 px-5 sm:px-6 rounded-lg shadow-md transition-all hover:shadow-lg text-sm sm:text-base">
+                <i class="fas fa-sign-out-alt"></i>
+                <span>Logout</span>
+            </a>
+        </div>
+
+        <!-- Stats -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-8 sm:mb-10">
+            <div class="bg-white rounded-xl shadow-md p-4 sm:p-6 text-center border-l-4 border-primary-500" data-aos="fade-up" data-aos-delay="0">
+                <div class="text-2xl sm:text-3xl font-bold text-primary-600 mb-1">{{ total }}</div>
+                <div class="text-xs sm:text-sm text-neutral-600">Total Messages</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-4 sm:p-6 text-center border-l-4 border-accent-500" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-2xl sm:text-3xl font-bold text-accent-600 mb-1">{{ unread }}</div>
+                <div class="text-xs sm:text-sm text-neutral-600">Unread</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-4 sm:p-6 text-center border-l-4 border-primary-500" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-2xl sm:text-3xl font-bold text-primary-500 mb-1">{{ today }}</div>
+                <div class="text-xs sm:text-sm text-neutral-600">Today</div>
+            </div>
+            <div class="bg-white rounded-xl shadow-md p-4 sm:p-6 text-center border-l-4 border-accent-500" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-2xl sm:text-3xl font-bold text-accent-500 mb-1">100%</div>
+                <div class="text-xs sm:text-sm text-neutral-600">Auto Saved</div>
+            </div>
+        </div>
+
+        <!-- Messages List -->
+        <div class="bg-white rounded-xl shadow-lg overflow-hidden" data-aos="fade-up">
+            {% for msg in admin_messages %}
+            <div class="border-b border-neutral-200 last:border-0 p-4 sm:p-6 hover:bg-neutral-50 transition-all {% if not msg.is_read %}bg-accent-50 border-l-4 border-accent-500{% endif %}">
+                <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-4 sm:gap-6">
+                    
+                    <!-- Left: Message Info -->
+                    <div class="flex-1 min-w-0">
+                        <div class="flex flex-wrap items-center gap-2 mb-3">
+                            <h3 class="text-lg sm:text-xl font-bold text-neutral-900 flex items-center gap-2">
+                                <i class="fas fa-user-circle text-primary-500"></i>
+                                <span class="truncate">{{ msg.name }}</span>
+                            </h3>
+                            {% if not msg.is_read %}
+                                <span class="bg-accent-500 text-white text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">
+                                    <i class="fas fa-circle text-xs mr-1 animate-pulse"></i>NEW
+                                </span>
+                            {% endif %}
+                            {% if msg.is_replied %}
+                                <span class="bg-primary-500 text-white text-xs font-bold px-2.5 py-1 rounded-full whitespace-nowrap">
+                                    <i class="fas fa-check-circle mr-1"></i>REPLIED
+                                </span>
+                            {% endif %}
+                        </div>
+
+                        <div class="space-y-2 text-sm text-neutral-700 mb-4">
+                            <p class="flex items-start sm:items-center gap-2 break-all">
+                                <i class="fas fa-envelope text-primary-500 mt-0.5 sm:mt-0 flex-shrink-0"></i>
+                                <span class="font-medium">Email:</span> 
+                                <a href="mailto:{{ msg.email }}" class="text-primary-600 hover:underline break-all">{{ msg.email }}</a>
+                            </p>
+                            {% if msg.phone %}
+                            <p class="flex items-start sm:items-center gap-2">
+                                <i class="fab fa-whatsapp text-accent-600 mt-0.5 sm:mt-0 flex-shrink-0"></i>
+                                <span class="font-medium">Phone:</span> 
+                                <a href="https://wa.me/{{ msg.phone|cut:' '|cut:'+' }}" target="_blank" 
+                                   class="text-accent-600 font-medium hover:underline">
+                                    {{ msg.phone }}
+                                </a>
+                            </p>
+                            {% endif %}
+                            {% if msg.subject %}
+                            <p class="flex items-start sm:items-center gap-2">
+                                <i class="fas fa-tag text-accent-500 mt-0.5 sm:mt-0 flex-shrink-0"></i>
+                                <span class="font-medium">Subject:</span> 
+                                <span class="break-words">{{ msg.subject }}</span>
+                            </p>
+                            {% endif %}
+                        </div>
+
+                        <div class="bg-neutral-50 rounded-lg p-4 border-l-4 border-primary-500">
+                            <p class="text-sm text-neutral-800 leading-relaxed italic break-words">
+                                <i class="fas fa-quote-left text-primary-500 mr-2"></i>{{ msg.message }}<i class="fas fa-quote-right text-primary-500 ml-2"></i>
+                            </p>
+                        </div>
+
+                        <!-- Reply History -->
+                        {% if msg.replies.exists %}
+                        <div class="mt-4 space-y-2">
+                            <p class="text-xs font-semibold text-neutral-500 uppercase tracking-wider flex items-center gap-2">
+                                <i class="fas fa-history"></i>Previous Replies
+                            </p>
+                            {% for reply in msg.replies.all %}
+                            <div class="bg-primary-50 p-3 rounded-lg border border-primary-200">
+                                <p class="text-xs text-neutral-700 break-words">{{ reply.reply_text|linebreaks }}</p>
+                                <p class="text-xs text-neutral-500 mt-2 flex flex-wrap items-center gap-2">
+                                    <span class="flex items-center gap-1">
+                                        <i class="far fa-clock"></i>{{ reply.replied_at|date:"d M Y, h:i A" }}
+                                    </span>
+                                    {% if reply.sent_via_email %}
+                                        <span class="text-primary-600 font-medium">
+                                            <i class="fas fa-check-circle"></i>Email Delivered
+                                        </span>
+                                    {% endif %}
+                                </p>
+                            </div>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                    </div>
+
+                    <!-- Right: Actions & Date -->
+                    <div class="flex flex-row lg:flex-col items-center justify-between lg:items-end gap-3 lg:gap-4 pt-3 lg:pt-0 border-t lg:border-t-0 border-neutral-200">
+                        <!-- Date -->
+                        <div class="text-sm text-neutral-500">
+                            <p class="font-medium whitespace-nowrap">
+                                <i class="far fa-calendar-alt mr-1"></i>{{ msg.created_at|date:"d M Y" }}
+                            </p>
+                            <p class="text-xs whitespace-nowrap">
+                                <i class="far fa-clock mr-1"></i>{{ msg.created_at|time:"g:i A" }}
+                            </p>
+                        </div>
+
+                        <!-- Reply Button -->
+                        <a href="{% url 'reply_message' msg.slug %}" 
+                           class="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 text-white font-semibold py-2 px-4 sm:px-6 rounded-lg shadow-md hover:shadow-lg transform hover:-translate-y-0.5 transition-all duration-300 text-sm whitespace-nowrap">
+                            <i class="fas fa-reply"></i>
+                            <span>Reply</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% empty %}
+            <div class="p-12 sm:p-20 text-center">
+                <div class="text-5xl sm:text-6xl mb-4">
+                    <i class="far fa-envelope text-neutral-300"></i>
+                </div>
+                <p class="text-xl sm:text-2xl text-neutral-500 font-serif">No messages yet</p>
+                <p class="text-sm sm:text-base text-neutral-400 mt-2">Your first client message will appear here</p>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Property Pioneers Verification Code</title>
+    <style>
+        * { box-sizing: border-box; }
+        body { 
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+            background: #f8fafc; 
+            margin: 0; 
+            padding: 0;
+            -webkit-text-size-adjust: 100%;
+            -ms-text-size-adjust: 100%;
+        }
+        .container { 
+            max-width: 600px; 
+            margin: 20px auto; 
+            background: white; 
+            border-radius: 16px; 
+            overflow: hidden; 
+            box-shadow: 0 20px 50px rgba(0,0,0,0.12);
+        }
+        .header { 
+            background: linear-gradient(135deg, #1E3A5F, #152C47); 
+            padding: 40px 20px; 
+            text-align: center; 
+            color: white; 
+        }
+        .header h1 { 
+            margin: 0; 
+            font-size: 28px; 
+            font-weight: 800; 
+            letter-spacing: -0.5px; 
+        }
+        .header p { 
+            margin: 12px 0 0; 
+            font-size: 16px; 
+            opacity: 0.95; 
+        }
+        .body { 
+            padding: 30px 20px; 
+            text-align: center; 
+            color: #1f2937; 
+            line-height: 1.7; 
+        }
+        .body p {
+            font-size: 15px;
+            margin: 15px 0;
+        }
+        .otp-box { 
+            background: linear-gradient(135deg, #FFFBF0, #FFF4D6); 
+            padding: 30px 20px; 
+            border-radius: 12px; 
+            margin: 25px 0; 
+            border: 2px dashed #C5A572;
+        }
+        .otp-code { 
+            font-size: 36px; 
+            font-weight: 900; 
+            letter-spacing: 8px; 
+            color: #1E3A5F; 
+            background: white; 
+            padding: 16px 20px; 
+            border-radius: 10px; 
+            display: inline-block; 
+            margin: 15px 0;
+            box-shadow: 0 8px 24px rgba(30,58,95,0.15);
+            word-break: break-all;
+        }
+        .otp-box p {
+            margin: 15px 0 0;
+            font-size: 15px;
+            color: #1E3A5F;
+        }
+        .warning { 
+            background: #FFF4D6; 
+            color: #876F4A; 
+            padding: 16px; 
+            border-radius: 10px; 
+            margin: 25px 0; 
+            font-size: 14px;
+            border: 1px solid #C5A572;
+        }
+        .warning p {
+            margin: 0;
+            font-size: 14px;
+        }
+        .footer { 
+            background: #0D1117; 
+            color: #94a3b8; 
+            padding: 30px 20px; 
+            text-align: center; 
+            font-size: 13px; 
+        }
+        .footer p {
+            margin: 8px 0;
+        }
+        .logo { 
+            font-size: 24px; 
+            font-weight: 800; 
+            color: white; 
+            margin-bottom: 10px;
+        }
+
+        /* Mobile Responsive */
+        @media only screen and (max-width: 600px) {
+            .container {
+                margin: 10px;
+                border-radius: 12px;
+            }
+            .header {
+                padding: 30px 15px;
+            }
+            .header h1 {
+                font-size: 24px;
+            }
+            .header p {
+                font-size: 14px;
+            }
+            .body {
+                padding: 25px 15px;
+            }
+            .body p {
+                font-size: 14px;
+            }
+            .otp-box {
+                padding: 25px 15px;
+                margin: 20px 0;
+            }
+            .otp-code {
+                font-size: 32px;
+                letter-spacing: 6px;
+                padding: 14px 16px;
+            }
+            .otp-box p {
+                font-size: 14px;
+            }
+            .warning {
+                padding: 14px;
+                font-size: 13px;
+            }
+            .footer {
+                padding: 25px 15px;
+                font-size: 12px;
+            }
+            .logo {
+                font-size: 20px;
+            }
+        }
+
+        /* Extra Small Mobile */
+        @media only screen and (max-width: 400px) {
+            .header h1 {
+                font-size: 22px;
+            }
+            .otp-code {
+                font-size: 28px;
+                letter-spacing: 4px;
+                padding: 12px 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">Property Pioneers</div>
+            <h1>Verify Your Email</h1>
+            <p>You're one step away from sending your message</p>
+        </div>
+
+        <div class="body">
+            <p>Hello <strong>{{ name }}</strong>,</p>
+            <p>Thank you for contacting us. To ensure it's really you, please use the verification code below:</p>
+
+            <div class="otp-box">
+                <div class="otp-code">{{ otp }}</div>
+                <p>
+                    This code expires in <strong>5 minutes</strong>
+                </p>
+            </div>
+
+            <div class="warning">
+                <p>Do not share this code with anyone. Our team will never ask for it.</p>
+            </div>
+
+            <p>If you didn't request this code, please ignore this email.</p>
+        </div>
+
+        <div class="footer">
+            <p><strong>Property Pioneers</strong> • Premium Real Estate</p>
+            <p>+234 904 640 3479</p>
+            <p>contact@propertypioneersltd.com</p>
+            <p>© {{ year }} Property Pioneers. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,470 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}About Us | Property Pioneers - Your Trusted Real Estate Partner{% endblock %}
+
+{% block content %}
+
+<!-- Page Hero -->
+<section class=" heroSwiper  relative h-screen flex items-center justify-center text-white overflow-hidden">
+    <img src="{% static 'img/house3.jpeg' %}" alt="About Property Pioneers" class="absolute inset-0 w-full h-full object-cover">
+    <div class="absolute inset-0 bg-gradient-to-br from-primary-900/95 via-primary-800/85 to-accent-900/90"></div>
+    
+    <div class="relative text-center px-6 max-w-5xl z-10">
+        <div class="inline-block bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-semibold mb-6" data-aos="fade-down">
+            <i class="fas fa-building mr-2"></i>About Property Pioneers
+        </div>
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-serif font-bold mb-6 leading-tight" data-aos="fade-up" data-aos-delay="100">
+            Building Trust, One Property at a Time
+        </h1>
+        <p class="text-xl md:text-2xl text-neutral-100 mb-8" data-aos="fade-up" data-aos-delay="200">
+            Your trusted partner in premium real estate since 2020
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="300">
+            <a href="#our-story" class="inline-block bg-accent-500 hover:bg-accent-600 text-white font-bold py-3 px-8 rounded-lg transition-all duration-300 shadow-lg">
+                <i class="fas fa-book-open mr-2"></i>Our Story
+            </a>
+            <a href="{% url 'contact' %}" class="inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 border-2 border-white text-white font-bold py-3 px-8 rounded-lg transition-all duration-300">
+                <i class="fas fa-envelope mr-2"></i>Contact Us
+            </a>
+        </div>
+    </div>
+</section>
+
+
+<!-- ABOUT US – NOW PERFECTLY MATCHING "OUR STORY" STYLE -->
+<section id="our-story" class="py-20 md:py-32 bg-gradient-to-br from-primary-50 to-neutral-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <div class="inline-block bg-primary-100 text-primary-700 px-5 py-2 rounded-full text-sm font-semibold mb-6" data-aos="fade-up">
+                Welcome to Property Pioneers
+            </div>
+            <h1 class="text-3xl md:text-5xl font-serif font-bold mb-6 text-neutral-900" data-aos="fade-up" data-aos-delay="100">
+                Creating Trust, Creating Happiness<br>One Home at a Time
+            </h1>
+        </div>
+
+        <!-- Image + Text Side by Side (Exactly like Our Story) -->
+        <div class="grid md:grid-cols-2 gap-12  items-cente">
+            <!-- Left: Stunning Image -->
+            <div data-aos="fade-up">
+                <img src="{% static 'img/house8.jpeg' %}" 
+                     alt="Property Pioneers Ltd - Modern Real Estate Office in Nigeria" 
+                     class="object-cover rounded-3xl shadow-2xl">
+            </div>
+
+            <!-- Right: Powerful Text Content -->
+            <div class="space-y-2" data-aos="fade-up">
+                <div class="text-lg text-neutral-700 leading-relaxed ">
+                    <p>
+                        <strong>Property Pioneer Ltd</strong> is a trusted real estate company committed to delivering exceptional property solutions through a customer-centered and transparent approach.
+                    </p>
+                    <p>
+                        We specialize in the sale, rental, verification, and management of residential, commercial, and investment properties — ensuring every client enjoys a smooth, secure, and rewarding real estate experience.
+                    </p>
+
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Stats Banner -->
+<section class="py-16 bg-white relative -mt-16 z-10">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="bg-gradient-to-r from-primary-600 to-primary-700 rounded-2xl shadow-2xl p-8 md:p-12">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center text-white">
+                <div data-aos="fade-up" data-aos-delay="0">
+                    <div class="text-4xl md:text-5xl font-bold font-serif mb-2">500+</div>
+                    <div class="text-neutral-100 text-sm md:text-base">Properties Delivered</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="100">
+                    <div class="text-4xl md:text-5xl font-bold font-serif mb-2">1,200+</div>
+                    <div class="text-neutral-100 text-sm md:text-base">Satisfied Clients</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="200">
+                    <div class="text-4xl md:text-5xl font-bold font-serif mb-2">5+</div>
+                    <div class="text-neutral-100 text-sm md:text-base">Years of Excellence</div>
+                </div>
+                <div data-aos="fade-up" data-aos-delay="300">
+                    <div class="text-4xl md:text-5xl font-bold font-serif mb-2">100%</div>
+                    <div class="text-neutral-100 text-sm md:text-base">Client Satisfaction</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Our Story -->
+<section  class=" hidden py-20 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <div class="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4" data-aos="fade-up">
+                <i class="fas fa-history mr-2"></i>Our Journey
+            </div>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 text-neutral-900" data-aos="fade-up" data-aos-delay="100">
+                From Vision to Reality
+            </h2>
+            <p class="text-lg text-neutral-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Every great journey begins with a simple vision. Here's ours.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center mb-16">
+            <div data-aos="fade-up">
+                <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Modern Office" class="rounded-2xl shadow-2xl">
+            </div>
+            <div data-aos="fade-up">
+                <h3 class="text-3xl font-serif font-bold mb-6 text-neutral-900">The Beginning</h3>
+                <p class="text-lg text-neutral-700 leading-relaxed mb-6">
+                    Founded in 2020 with a vision to transform the real estate experience, Property Pioneers was born from a simple belief: every client deserves transparency, expertise, and peace of mind when making one of life's biggest decisions.
+                </p>
+                <p class="text-lg text-neutral-700 leading-relaxed">
+                    What started as a small team of passionate real estate professionals has grown into a trusted brand known for integrity, quality service, and exceptional results.
+                </p>
+            </div>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div class="order-2 md:order-1" data-aos="fade-down">
+                <h3 class="text-3xl font-serif font-bold mb-6 text-neutral-900">Today & Beyond</h3>
+                <p class="text-lg text-neutral-700 leading-relaxed mb-6">
+                    Today, we've helped over 1,200 families and investors secure their dream properties — from luxury villas to strategic land investments — all backed by verified titles and professional guidance.
+                </p>
+                <p class="text-lg text-neutral-700 leading-relaxed mb-6">
+                    Our commitment to innovation led us to introduce virtual tours, advanced investment analysis tools, and 24/7 client support — setting new standards in the real estate industry.
+                </p>
+                <div class="flex gap-4">
+                    <div class="bg-primary-100 p-4 rounded-xl flex-1">
+                        <div class="text-primary-600 font-bold text-2xl mb-1">98%</div>
+                        <div class="text-sm text-neutral-600">Client Retention</div>
+                    </div>
+                    <div class="bg-accent-100 p-4 rounded-xl flex-1">
+                        <div class="text-accent-600 font-bold text-2xl mb-1">₦50B+</div>
+                        <div class="text-sm text-neutral-600">Properties Sold</div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-1 md:order-2" data-aos="fade-down">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=800&q=80" alt="Luxury Property" class="rounded-2xl shadow-2xl">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Mission & Values -->
+<section class="  py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <div class="inline-block bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-semibold mb-4" data-aos="fade-up">
+                <i class="fas fa-heart mr-2"></i>Our Core Values
+            </div>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 text-neutral-900" data-aos="fade-up" data-aos-delay="100">
+                What Drives Us Forward
+            </h2>
+            <p class="text-lg text-neutral-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Our values aren't just words on a wall — they're the foundation of everything we do.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
+            <!-- Value 1: Integrity -->
+            <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="0">
+                <div class="bg-primary-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-lg">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-4 text-neutral-900">Professionalism</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                    We uphold the highest standards in all our dealings, providing accurate, dependable, and efficient services.
+            </div>
+
+            <!-- Value 2: Excellence -->
+            <div class="bg-gradient-to-br from-accent-50 to-accent-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-accent-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-lg">
+                    <i class="fas fa-star"></i>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-4 text-neutral-900">Integrity</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                    Every process is transparent, ethical, and trustworthy. We believe honesty is the best policy in all our interactions.
+                </p>
+            </div>
+
+            <!-- Value 3: Client Success -->
+            <div class="bg-gradient-to-br from-primary-50 to-primary-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-primary-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-lg">
+                    <i class="fas fa-handshake"></i>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-4 text-neutral-900">Communication</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                    Clear, timely, and honest communication guides every client relationship. We listen, advise, and support at every step.
+            </div>
+
+            <!-- Value 4: Service -->
+            <div class="bg-gradient-to-br from-accent-50 to-accent-100 rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2" data-aos="fade-up" data-aos-delay="200">
+                <div class="bg-accent-500 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-3xl shadow-lg">
+                    <i class="fas fa-concierge-bell"></i>
+                </div>
+                <h3 class="text-2xl font-serif font-bold mb-4 text-neutral-900">Service</h3>
+                <p class="text-neutral-700 leading-relaxed">
+                    We prioritize customer satisfaction and go the extra mile to deliver exceptional results.
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Our Mission & Vision -->
+<section class="py-20 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid md:grid-cols-2 gap-12">
+            
+            <!-- Mission -->
+            <div class="bg-white rounded-2xl p-10 shadow-xl" data-aos="fade-up">
+                <div class="bg-primary-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl">
+                    <i class="fas fa-bullseye"></i>
+                </div>
+                <h3 class="text-3xl font-serif font-bold mb-6 text-neutral-900">Our Mission</h3>
+                <p class=" text-neutral-700 leading-relaxed mb-6 hidden">
+                    To revolutionize the real estate experience by providing transparent, professional, and client-centered services that empower individuals and businesses to make confident property decisions.
+                </p>
+                <p class=" text-neutral-700 leading-relaxed mb-4">
+                    Our  mission  is bringing premium properties and creating  lasting  values  so building  on this it brings  us to our cure value which are
+                </p>
+
+                <ul class="hidden space-y-3 text-neutral-700">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-primary-600 mr-3 mt-1"></i>
+                        <span>Provide verified, high-quality properties</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-primary-600 mr-3 mt-1"></i>
+                        <span>Deliver exceptional customer service</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-primary-600 mr-3 mt-1"></i>
+                        <span>Build lasting relationships based on trust</span>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Vision -->
+            <div class="bg-white rounded-2xl p-10 shadow-xl" data-aos="fade-up" data-aos-delay="100">
+                <div class="bg-accent-500 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-white text-3xl">
+                    <i class="fas fa-eye"></i>
+                </div>
+                <h3 class="text-3xl font-serif font-bold mb-6 text-neutral-900 ">Our Vision</h3>
+                <p class="text-lg text-neutral-700 leading-relaxed mb-6 hidden">
+                    To become the most trusted and innovative real estate brand, known for setting industry standards in transparency, technology integration, and client satisfaction.
+                </p>
+                <p class=" text-neutral-700 leading-relaxed mb-4">
+                    Our vision  which is building trust, creating happiness  one home at a time. 
+                </p>
+                <ul class=" hidden space-y-2 text-neutral-700">
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-accent-600 mr-3 mt-1"></i>
+                        <span>Professionalism</span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-accent-600 mr-3 mt-1"></i>
+                        <span>Integrity</span>
+                    </li>
+
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-accent-600 mr-3 mt-1"></i>
+                        <span>Communication </span>
+                    </li>
+                    <li class="flex items-start">
+                        <i class="fas fa-check-circle text-accent-600 mr-3 mt-1"></i>
+                        <span>Service </span>
+                    </li>
+                    <li class="fle items-start hidden">
+                        <i class="fas fa-check-circle text-accent-600 mr-3 mt-1"></i>
+                        <span>Create wealth through smart property investments</span>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Why Choose Us -->
+<section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <div class="inline-block bg-primary-100 text-primary-700 px-4 py-2 rounded-full text-sm font-semibold mb-4" data-aos="fade-up">
+                <i class="fas fa-thumbs-up mr-2"></i>The Property Pioneers Advantage
+            </div>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 text-neutral-900" data-aos="fade-up" data-aos-delay="100">
+                Why Clients Choose Us
+            </h2>
+            <p class="text-lg text-neutral-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                We don't just sell properties — we build lasting partnerships and create success stories.
+            </p>
+        </div>
+
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            
+            <div class="bg-neutral-50 rounded-xl p-6 border-2 border-transparent hover:border-primary-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
+                <div class="text-primary-600 text-3xl mb-4">
+                    <i class="fas fa-certificate"></i>
+                </div>
+                <h4 class="text-lg font-bold font-serif mb-2 text-neutral-900">Verified Properties</h4>
+                <p class="text-neutral-600 text-sm">All properties undergo rigorous verification and title checks.</p>
+            </div>
+
+            <div class="bg-neutral-50 rounded-xl p-6 border-2 border-transparent hover:border-accent-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-accent-600 text-3xl mb-4">
+                    <i class="fas fa-headset"></i>
+                </div>
+                <h4 class="text-lg font-bold font-serif mb-2 text-neutral-900">24/7 Support</h4>
+                <p class="text-neutral-600 text-sm">Round-the-clock assistance from our expert team.</p>
+            </div>
+
+            <div class="bg-neutral-50 rounded-xl p-6 border-2 border-transparent hover:border-primary-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-primary-600 text-3xl mb-4">
+                    <i class="fas fa-vr-cardboard"></i>
+                </div>
+                <h4 class="text-lg font-bold font-serif mb-2 text-neutral-900">Virtual Tours</h4>
+                <p class="text-neutral-600 text-sm">Immersive 360° property tours from anywhere.</p>
+            </div>
+
+            <div class="bg-neutral-50 rounded-xl p-6 border-2 border-transparent hover:border-accent-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-accent-600 text-3xl mb-4">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <h4 class="text-lg font-bold font-serif mb-2 text-neutral-900">Investment Analysis</h4>
+                <p class="text-neutral-600 text-sm">Data-driven insights for smart investment decisions.</p>
+            </div>
+
+            <div class="bg-neutral-50 rounded-xl p-6 border-2 border-transparent hover:border-primary-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="0">
+                <div class="text-primary-600 text-3xl mb-4">
+                    <i class="fas fa-file-contract"></i>
+                </div>
+                <h4 class="text-lg font-bold font-serif mb-2 text-neutral-900">Legal Support</h4>
+                <p class="text-neutral-600 text-sm">Expert legal guidance throughout the process.</p>
+            </div>
+
+            <div class="bg-neutral-50 rounded-xl p-6 border-2 border-transparent hover:border-accent-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="100">
+                <div class="text-accent-600 text-3xl mb-4">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <h4 class="text-lg font-bold font-serif mb-2 text-neutral-900">Flexible Payment</h4>
+                <p class="text-neutral-600 text-sm">Customized payment plans to suit your needs.</p>
+            </div>
+
+            <div class="bg-neutral-50 rounded-xl p-6 border-2 border-transparent hover:border-primary-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="200">
+                <div class="text-primary-600 text-3xl mb-4">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <h4 class="text-lg font-bold font-serif mb-2 text-neutral-900">Property Management</h4>
+                <p class="text-neutral-600 text-sm">Professional management services available.</p>
+            </div>
+
+            <div class="bg-neutral-50 rounded-xl p-6 border-2 border-transparent hover:border-accent-500 transition-all duration-300" data-aos="fade-up" data-aos-delay="300">
+                <div class="text-accent-600 text-3xl mb-4">
+                    <i class="fas fa-award"></i>
+                </div>
+                <h4 class="text-lg font-bold font-serif mb-2 text-neutral-900">Award-Winning</h4>
+                <p class="text-neutral-600 text-sm">Recognized for excellence in service delivery.</p>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+
+<!-- Team Section (Optional - you can add team photos later) -->
+<section class="py-20 bg-neutral-50">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-14">
+            <div class="inline-block bg-accent-100 text-accent-700 px-4 py-2 rounded-full text-sm font-semibold mb-4" data-aos="fade-up">
+                <i class="fas fa-users mr-2"></i>Meet Our Team
+            </div>
+            <h2 class="text-3xl md:text-5xl font-serif font-bold mb-6 text-neutral-900" data-aos="fade-up" data-aos-delay="100">
+                Experts You Can Trust
+            </h2>
+            <p class="text-lg text-neutral-600 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="200">
+                Our team of experienced professionals is dedicated to making your real estate journey smooth and successful.
+            </p>
+        </div>
+
+        <div class="bg-gradient-to-br from-primary-600 to-primary-700 rounded-2xl p-12 text-center text-white" data-aos="fade-up">
+            <div class="max-w-3xl mx-auto">
+                <div class="text-5xl mb-6">
+                    <i class="fas fa-user-friends"></i>
+                </div>
+                <h3 class="text-3xl font-serif font-bold mb-4">Professional. Experienced. Dedicated.</h3>
+                <p class="text-lg text-primary-100 mb-8">
+                    Our team combines decades of real estate expertise with a passion for helping clients achieve their property goals. From sales agents to legal advisors, every team member is committed to your success.
+                </p>
+                <div class="grid grid-cols-3 gap-6 max-w-2xl mx-auto">
+                    <div>
+                        <div class="text-3xl font-bold mb-1">15+</div>
+                        <div class="text-sm text-primary-100">Expert Agents</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold mb-1">10+</div>
+                        <div class="text-sm text-primary-100">Legal Advisors</div>
+                    </div>
+                    <div>
+                        <div class="text-3xl font-bold mb-1">24/7</div>
+                        <div class="text-sm text-primary-100">Support Staff</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- CTA Section -->
+<section class="py-24 bg-gradient-to-br from-primary-700 via-primary-600 to-accent-600 text-white relative overflow-hidden">
+    <!-- Animated background pattern -->
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute top-0 left-0 w-96 h-96 bg-white rounded-full blur-3xl animate-pulse"></div>
+        <div class="absolute bottom-0 right-0 w-96 h-96 bg-accent-300 rounded-full blur-3xl animate-pulse" style="animation-delay: 1s;"></div>
+    </div>
+
+    <div class="max-w-4xl mx-auto text-center px-6 relative z-10">
+        <div class="inline-block bg-white/10 backdrop-blur-sm px-6 py-2 rounded-full text-sm font-semibold mb-6" data-aos="fade-down">
+            <i class="fas fa-rocket mr-2"></i>Ready to Get Started?
+        </div>
+        <h2 class="text-4xl md:text-6xl font-serif font-bold mb-6" data-aos="fade-up">
+            Let's Write Your Success Story
+        </h2>
+        <p class="text-lg md:text-xl mb-10 text-primary-100 max-w-2xl mx-auto leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+            Join hundreds of satisfied clients who have found their perfect properties with Property Pioneers. Your dream property is waiting.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center" data-aos="fade-up" data-aos-delay="200">
+            <a href="{% url 'contact' %}" class="inline-block bg-accent-500 hover:bg-accent-600 text-white text-lg font-bold py-4 px-10 rounded-lg shadow-2xl transition-all duration-300 transform hover:-translate-y-1">
+                <i class="fas fa-envelope mr-2"></i>Get in Touch
+            </a>
+            <a href="{% url 'property_list' %}" class="inline-block bg-white/10 backdrop-blur-sm hover:bg-white/20 border-2 border-white text-white text-lg font-bold py-4 px-10 rounded-lg transition-all duration-300">
+                <i class="fas fa-home mr-2"></i>View Properties
+            </a>
+        </div>
+
+        <!-- Trust indicators -->
+        <div class="mt-16 flex flex-wrap justify-center gap-8 text-sm" data-aos="fade-up" data-aos-delay="300">
+            <div class="flex items-center">
+                <i class="fas fa-shield-alt text-2xl mr-2"></i>
+                <span>Verified & Secure</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-users text-2xl mr-2"></i>
+                <span>1,200+ Happy Clients</span>
+            </div>
+            <div class="flex items-center">
+                <i class="fas fa-star text-2xl mr-2"></i>
+                <span>5-Star Rated</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
